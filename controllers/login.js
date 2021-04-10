@@ -1,7 +1,10 @@
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
+const cors = require("cors");
 const loginRouter = require('express').Router()
-const User = require('../models/User')
+const User = require("../models/User");
+
+loginRouter.use(cors());
 
 loginRouter.post('/', async (request, response) => {
   const { body } = request
