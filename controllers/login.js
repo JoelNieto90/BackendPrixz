@@ -4,9 +4,7 @@ const cors = require("cors");
 const loginRouter = require('express').Router()
 const User = require("../models/User");
 
-loginRouter.use(cors());
-
-loginRouter.post('/', async (request, response) => {
+loginRouter.post('/', cors(), async (request, response) => {
   const { body } = request
   const { username, password } = body;
 
